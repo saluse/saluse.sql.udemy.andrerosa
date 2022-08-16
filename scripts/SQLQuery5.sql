@@ -2,7 +2,7 @@
 USE NORTHWND
 --Simulando Erro UNION
 
-SELECT 1
+SELECT 1 -- se os tipos forem diferentes, o select apresentará erro.
 UNION 
 SELECT 'A'
 
@@ -18,11 +18,27 @@ SELECT 'A'
 	ORDER BY City
 -- EXEMPLO USANDO UNION ALL
 
-	SELECT city
+	SELECT 'CLI' ,city
 	FROM Customers
 
 	UNION ALL
 
-	SELECT city
+	SELECT 'FORNEC' ,city
 	FROM Suppliers
 	ORDER BY city
+
+-- Exemplo com UNION 
+
+	SELECT city,
+		   country
+	FROM Customers
+	WHERE Country = 'Germany'
+
+	UNION 
+	SELECT city,
+		   Country
+	FROM Suppliers
+	WHERE country = 'Germany'
+	ORDER BY city
+
+-- Exemplo com UNION ALL
