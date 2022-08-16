@@ -87,4 +87,4 @@ USE NORTHWND
 	INNER JOIN Employees
 			ON Orders.EmployeeID = Employees.EmployeeID
 	--WHERE	lastname = 'Davolio' OR LastName = 'Fuller'
-	GROUP BY LastName	HAVING	count(orders.OrderID) > 25;
+	GROUP BY LastName	HAVING	count(orders.OrderID) > 20;
