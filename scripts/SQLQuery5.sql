@@ -1,0 +1,1 @@
+-- Operadores UNION / UNION ALL
