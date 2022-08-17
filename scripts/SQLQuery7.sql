@@ -1,5 +1,5 @@
 -- Continuação da aula 033
-	SELECT * FROM Funcionários
+	SELECT * FROM Funcionários		
 -- SIMULANDO ERRO
 	INSERT INTO Funcionários (nome, SALARIO) VALUES ('Pedro','asaas')
 -- DML UPDATE
@@ -18,4 +18,7 @@
 	UPDATE Funcionários SET SETOR = 'Produção'	
 	WHERE ID = '24'
 -- EXEMPLO DE UPDATE COM MAIS DE 1 CAMPO
-	UPDATE Funcionários
+	UPDATE Funcionários SET SALARIO = salario*1.20, SETOR = 'TI'
+	WHERE ID <> '1'
+-- EXEMPLO DML DELETE
+	DELETE Funcionários WHERE ID = '29'
