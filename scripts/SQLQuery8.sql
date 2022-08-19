@@ -11,8 +11,9 @@ USE Curso
 			Data_Nasc	DATETIME
 			)
 	SELECT * FROM FuncionáriosAju
-
+	SELECT * FROM Salario
 -- DDL Criando tabela com chave estrangeira.
+USE Curso
 	CREATE TABLE Salário
 (
 	Matrícula INT PRIMARY KEY NOT NULL,
