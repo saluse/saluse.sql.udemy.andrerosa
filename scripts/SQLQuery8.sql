@@ -63,4 +63,20 @@ SELECT * FROM Funcionário
  EXEC Sp_rename	'Funcionário', 'Func';
 
  -- EXCLUINDO DATABASE 
- DROP DATABASE Curso;
+ CREATE DATABASE Teste
+ DROP DATABASE Teste;
+
+ -- EXCLUINDO TABLE 
+DROP TABLE Salario
+
+DROP TABLE Func;
+ -- EXCLUINDO VIEW
+ -- Primeiro criando a view
+ CREATE VIEW v_FuncionáriosAju
+	AS
+	SELECT * FROM FuncionáriosAju
+	ALTER VIEW v_FuncionáriosAju
+	AS 
+	SELECT NOME, Sobrenome, Cidade, País FROM FuncionáriosAju
+DROP VIEW v_FuncionáriosAju;
+-- EXCLUINDO INDEX 
