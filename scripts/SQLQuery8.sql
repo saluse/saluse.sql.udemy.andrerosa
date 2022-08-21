@@ -41,3 +41,26 @@ CREATE TABLE audit_salario
  
  -- ADICIONAR NOVO CAMPO NA TABELA
  ALTER TABLE Funcionário ADD genero CHAR(1);
+ 
+SELECT * FROM Funcionário
+
+ -- RENOMEANDO CAMPO DE TABELA 
+ -- EXEC  sp_rename 'TABELA_ORIGEM.CAMPO_ORIG',	'CAMPO_ORIG', 'COLUMN' 
+ EXEC Sp_rename 'Funcionário.Endereço', 'Ender', 'COLUMN'
+
+ -- AULA 036
+ -- ALTERANDO TIPO DE COLUNA
+
+ ALTER TABLE Funcionário ALTER COLUMN ender Varchar(30)
+
+ -- EXCLUINDO CAMPO DA COLUNA 
+
+ ALTER TABLE Funcionário DROP COLUMN genero;
+
+ -- RENOMEANDO TABELA 
+ -- EXEC Sp_rename 'Nome Antigo', 'Nome Novo'
+
+ EXEC Sp_rename	'Funcionário', 'Func';
+
+ -- EXCLUINDO DATABASE 
+ DROP DATABASE Curso;
