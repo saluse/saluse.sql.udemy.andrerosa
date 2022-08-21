@@ -79,4 +79,26 @@ DROP TABLE Func;
 	AS 
 	SELECT NOME, Sobrenome, Cidade, País FROM FuncionáriosAju
 DROP VIEW v_FuncionáriosAju;
+-- AULA 037
 -- EXCLUINDO INDEX 
+DROP INDEX ix_func1 ON func;
+SELECT * FROM funcionáriosAju
+CREATE INDEX ix_func1 ON funcionáriosAju(País);
+DROP INDEX ix_func1 ON funcionáriosAju;
+
+-- EXCLUINDO PROCEDURE
+DROP PROCEDURE Proc_salario; -- AINDA NÃO FOI USADO
+
+-- EXCLUINDO FUNÇÃO
+DROP FUNCTION func_salario; -- AINDA NÃO FOI USADO
+
+-- EXCLUINDO TRIGGER
+DROP TRIGGER trig_func_salario; -- AINDA NÃO FOI USADO
+
+-- DDL TRUNCATE
+USE AdventureWorks2014
+SELECT * FROM Person.Address;
+TRUNCATE TABLE Person.Address; --CUIDADO O COMANDO TRUNCATE APAGA TODOS OS DADOS DA TABELA.
+
+-- DDL TRUNCATE VERIFICANDO 
+USE AdventureWorks2014
