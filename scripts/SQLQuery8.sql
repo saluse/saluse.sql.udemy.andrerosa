@@ -71,7 +71,7 @@ DROP TABLE Salario
 
 DROP TABLE Func;
  -- EXCLUINDO VIEW
- -- Primeiro criando a view
+ -- PRIMEIRO - CRIANDO A VIEW
  CREATE VIEW v_FuncionáriosAju
 	AS
 	SELECT * FROM FuncionáriosAju
