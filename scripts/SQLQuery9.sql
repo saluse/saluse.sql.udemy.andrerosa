@@ -47,3 +47,5 @@ EXEC sp_grantdbaccess 'UsrTeste','UsrTeste';
 use curso;
 --Concedendo Acesso DE ATUALIZACAO PARA UsrTeste.
 GRANT UPDATE ON FUNCIONARIOS TO UsrTeste;
+
+-- AULA 039

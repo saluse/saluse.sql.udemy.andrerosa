@@ -1,17 +1,17 @@
 --Parte 1 CONCEDE-GRANT
 -- Cria um login e dá permissões no banco
 
-exec master.dbo.sp_addlogin 'UsrTeste','SenhaTeste'
-EXEC sp_grantdbaccess 'UsrTeste','UsrTeste'
+exec master.dbo.sp_addlogin 'UsrTeste','SenhaTeste';
+EXEC sp_grantdbaccess 'UsrTeste','UsrTeste';
 
-EXEC sp_revokedbaccess 'UsrTeste'
+EXEC sp_revokedbaccess 'UsrTeste';
 
 
 --Concedendo Acesso DE ATUALIZACAO PARA UsrTeste.
-GRANT UPDATE ON FUNCIONARIOS TO UsrTeste; 
+GRANT UPDATE ON Funcionários TO UsrTeste; 
 
 --Concedendo Acesso DE INSERT PARA UsrTeste.
-GRANT INSERT ON FUNCIONARIOS TO UsrTeste; 
+GRANT INSERT ON FUNCIONÁRIOS TO UsrTeste; 
 
 --Concedendo Acesso DE Leitura PARA UsrTeste.
 GRANT SELECT ON FUNCIONARIOS TO UsrTeste;
@@ -19,12 +19,13 @@ GRANT SELECT ON FUNCIONARIOS TO UsrTeste;
 --Concedendo Acesso DE DELETE PARA UsrTeste.
 GRANT DELETE ON FUNCIONARIOS TO UsrTeste;
 
-
+SELECT * FROM Funcionários
 --criando procedure
 
 CREATE PROCEDURE testproc 
 as
-select * from cidades
+select Cidade
+FROM FuncionáriosAju
 
 --executando procedure
 EXEC testproc
