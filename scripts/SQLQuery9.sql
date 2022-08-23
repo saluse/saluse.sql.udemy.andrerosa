@@ -11,3 +11,9 @@ GRANT UPDATE ON Funcionário TO UsrTeste;
 -- Concedendo acesso de INSERT para UsrTeste.
 GRANT INSERT ON Funcionário TO UsrTeste;
 SELECT * from UsrTeste
+
+-- Concedendo acesso de leitura para UsrTeste.
+GRANT SELECT ON Funcionário TO UsrTeste;
+
+-- Concedendo acesso de DELETE para UsrTeste.
+GRANT DELETE ON Funcionário TO UsrTeste;
