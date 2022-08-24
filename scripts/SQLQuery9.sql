@@ -63,4 +63,5 @@ EXEC testproc
 SELECT * FROM Funcionário
 
 --Testando Insert
-INSERT INTO Funcionário VALUES ('Maria','1000','TI')
+INSERT INTO Salários VALUES ('Maria','TI','1200')
+SELECT * FROM Salários
