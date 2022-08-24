@@ -65,3 +65,7 @@ SELECT * FROM Funcionário
 --Testando Insert
 INSERT INTO Salários VALUES ('Maria','TI','1200')
 SELECT * FROM Salários
+
+-- Testando UPDATE
+UPDATE Salários SET Nome='Maria'
+WHERE Matrícula='5'
