@@ -94,3 +94,5 @@ SELECT CURRENT_USER
 EXEC sp_grantdbaccess 'UsrTeste','UsrTeste'
 
 EXEC sp_revokedbaccess 'UsrTeste'
+
+select * from salarios
