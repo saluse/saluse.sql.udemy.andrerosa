@@ -69,3 +69,10 @@ SELECT * FROM Salários
 -- Testando UPDATE
 UPDATE Salários SET Nome='Maria'
 WHERE Matrícula='5'
+
+USE Curso
+-- Testando DELETE 
+DELETE FROM Salários
+WHERE Matrícula='5'
+
+INSERT INTO Salários VALUES ('Weverton','Analytcs','4500') 
