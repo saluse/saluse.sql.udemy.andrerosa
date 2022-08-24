@@ -78,8 +78,13 @@ WHERE Matrícula='5'
 INSERT INTO Salários VALUES ('Weverton','Analytcs','4500') 
 
 -- Revogando acesso de atualização UsrTeste.
-REVOKE UPDATE ON Salários TO UsrTeste;
+REVOKE UPDATE ON Funcionário TO UsrTeste;
 
+-- Revogando acesso de inserção UsrTeste.
+REVOKE INSERT ON Funcionário TO UsrTeste;
 
+-- Revogando acesso de Leitura do UsrTeste
+REVOKE SELECT ON Funcionário TO UsrTeste;
 
-
+-- Revoga direito de execução da proc Teste`_Proc para UsrTeste.
+REVOKE EXECUTE ON testproc TO UsrTeste;
