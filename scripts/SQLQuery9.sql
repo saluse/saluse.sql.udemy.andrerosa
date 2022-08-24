@@ -88,3 +88,9 @@ REVOKE SELECT ON Funcionário TO UsrTeste;
 
 -- Revoga direito de execução da proc Teste`_Proc para UsrTeste.
 REVOKE EXECUTE ON testproc TO UsrTeste;
+
+--Verificando Usuário logado
+SELECT CURRENT_USER
+EXEC sp_grantdbaccess 'UsrTeste','UsrTeste'
+
+EXEC sp_revokedbaccess 'UsrTeste'
