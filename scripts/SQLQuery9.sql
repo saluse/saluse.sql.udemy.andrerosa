@@ -49,3 +49,14 @@ use curso;
 GRANT UPDATE ON FUNCIONARIOS TO UsrTeste;
 
 -- AULA 039
+-- Verificando o Usuário logado 
+SELECT CURRENT_USER 
+
+-- Alterando Usuário Logado
+SETUSER 'UsrTeste'
+
+-- Executando PROCEDURE Com usuário UsrTeste
+EXEC testproc
+
+-- Testando SELECT
+SELECT * FROM Funcionários
