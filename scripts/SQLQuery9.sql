@@ -46,7 +46,8 @@ EXEC sp_grantdbaccess 'UsrTeste','UsrTeste';
 -- seta o banco
 use curso;
 --Concedendo Acesso DE ATUALIZACAO PARA UsrTeste.
-GRANT UPDATE ON FUNCIONARIOS TO UsrTeste;
+GRANT UPDATE ON FUNCIONÁRIO TO UsrTeste;
+
 
 -- AULA 039
 -- Verificando o Usuário logado 
@@ -59,4 +60,7 @@ SETUSER 'UsrTeste'
 EXEC testproc
 
 -- Testando SELECT
-SELECT * FROM Funcionários
+SELECT * FROM Funcionário
+
+--Testando Insert
+INSERT INTO Funcionário VALUES ('Maria','1000','TI')
