@@ -55,7 +55,7 @@ SELECT CURRENT_USER
 
 -- Alterando Usuário Logado
 SETUSER 'UsrTeste'
-
+SETUSER 'dbo'
 -- Executando PROCEDURE Com usuário UsrTeste
 EXEC testproc
 
@@ -76,3 +76,10 @@ DELETE FROM Salários
 WHERE Matrícula='5'
 
 INSERT INTO Salários VALUES ('Weverton','Analytcs','4500') 
+
+-- Revogando acesso de atualização UsrTeste.
+REVOKE UPDATE ON Salários TO UsrTeste;
+
+
+
+
