@@ -18,4 +18,8 @@ CREATE TABLE Pedidos
 	Cod_Cliente nchar(5) NOT NULL,
 	Data		DATETIME NOT NULL,
 	Total		DECIMAL(10,2)
-	)	
+	)
+SELECT * FROM Pedidos
+-- IINSERINDO DADOS DA TABELA PEDIDOS A PARTIR DA TABELA ORDER DO BD NORTHWIND	
+INSERT INTO Pedidos	(Num_Ped, Cod_Cliente, Data)
+SELECT OrderID, CustomerID, OrderDate FROM NORTHWND.dbo.Orders
