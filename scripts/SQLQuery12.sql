@@ -33,7 +33,7 @@ GROUP BY p.Cod_Cliente
 
 -- Query para trazer todos os clientes através de subconsulta do valor de suas compras.
 SELECT C.Cod_Cli,
-	   (SELECT Sum(p.Total)
+	   (SELECT Isnull(Sum(p.Total),0)
 	   FROM Pedidos p
 	   WHERE c.cod_cli = p.Cod_cliente) AS TOTAL
 FROM Clientes c
