@@ -30,3 +30,11 @@ SELECT P.Cod_Cliente,
 	   SUM(p.total) Total
 FROM Pedidos AS P
 GROUP BY p.Cod_Cliente
+
+-- Query para trazer todos os clientes através de subconsulta do valor de suas compras.
+SELECT C.Cod_Cli,
+	   (SELECT Sum(p.Total)
+	   FROM Pedidos p
+	   WHERE c.cod_cli = p.Cod_cliente) AS TOTAL
+FROM Clientes c
+GROUP BY c.Cod_CLi
