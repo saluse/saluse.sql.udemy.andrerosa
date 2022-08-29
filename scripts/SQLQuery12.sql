@@ -38,3 +38,9 @@ SELECT C.Cod_Cli,
 	   WHERE c.cod_cli = p.Cod_cliente) AS TOTAL
 FROM Clientes c
 GROUP BY c.Cod_CLi
+
+-- Eliminando Clientes da tabela que não fizeram pedidos.
+
+SELECT * FROM Clientes
+DELETE FROM Clientes
+WHERE Cod_CLI not in (SELECT Cod_Cliente FROM Pedidos)
