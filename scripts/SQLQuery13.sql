@@ -47,3 +47,32 @@ ALTER TABLE Alunos ADD CONSTRAINT PL_1 PRIMARY KEY (Id_Aluno)
 ALTER TABLE	Matricula
 ADD CONSTRAINT FK_Mat1 FOREIGN KEY (Id_Aluno) REFERENCES Alunos (Id_Aluno)
 
+-- ADICIONANDO CHAVE ESTRANGEIRA  A TABELA MATRICULA CAMPO Id_Aluno
+ALTER TABLE	Matricula
+ADD CONSTRAINT FK_Mat2 FOREIGN KEY (Id_Disciplina) REFERENCES Alunos (Id_Aluno)
+
+-- INSERINDO REGISTROS NA TABELA ALUNOS 
+INSERT INTO Alunos VALUES ('João'),('Pedro'),('Maria'),('Tiago'),('Henrique')
+SELECT * FROM Alunos
+
+-- INSERINDO REGISTROS NA TABELA DISCIPLINA
+INSERT INTO Disciplina VALUES ('Fisica'),('Quimica'),('Matemática'),('Banco de Dados'),('Programação')
+SELECT * FROM Disciplina
+-- INSERINDO MATRICULAS DE ALUNOS
+
+SELECT * FROM Matricula
+
+INSERT INTO	Matricula VALUES ('1','1','Noturno')
+INSERT INTO Matricula VALUES ('1','2','Vespertino')
+INSERT INTO Matricula VALUES ('1','3','Matutino')
+
+INSERT INTO Matricula VALUES ('2','3','Noturno')
+INSERT INTO Matricula VALUES ('2','4','Noturno')
+
+INSERT INTO Matricula VALUES ('3','1','Noturno')
+INSERT INTO Matricula VALUES ('3','3','Noturno')
+INSERT INTO Matricula VALUES ('3','4','Noturno')
+
+INSERT INTO Matricula VALUES ('5','1','Matutino')
+INSERT INTO Matricula VALUES ('5','2','Vespertino')
+INSERT INTO Matricula VALUES ('5','4','Noturno')
