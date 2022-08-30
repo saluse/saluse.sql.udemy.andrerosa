@@ -77,7 +77,7 @@ INSERT INTO Matricula VALUES ('5','1','Matutino')
 INSERT INTO Matricula VALUES ('5','2','Vespertino')
 INSERT INTO Matricula VALUES ('5','4','Noturno')
 
--- AULA 045 E 046
+-- AULA 045
 -- ALUNO CODIGO 4 NÃO TEM MATRICULA
 -- DISCIPLINA 5 NÃO TEM ALUNOS
 
