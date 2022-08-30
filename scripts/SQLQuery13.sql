@@ -77,7 +77,7 @@ INSERT INTO Matricula VALUES ('5','1','Matutino')
 INSERT INTO Matricula VALUES ('5','2','Vespertino')
 INSERT INTO Matricula VALUES ('5','4','Noturno')
 
--- AULA 045
+-- AULA 045 E 046
 -- ALUNO CODIGO 4 NÃO TEM MATRICULA
 -- DISCIPLINA 5 NÃO TEM ALUNOS
 
@@ -109,5 +109,15 @@ RIGHT JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
 RIGHT JOIN Disciplina c
 ON b.Id_disciplina = c.Id_Diciplina
+
+-- FULL JOIN 
+
+SELECT a.Nome,c.Nome_Discip,b.Período
+FROM Alunos a
+FULL JOIN Matricula b
+ON a.Id_Aluno = b.Id_Aluno
+FULL JOIN Disciplina c
+ON b.Id_disciplina = c.Id_Diciplina
+
 
 
