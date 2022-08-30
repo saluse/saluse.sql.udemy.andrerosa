@@ -82,3 +82,10 @@ INSERT INTO Matricula VALUES ('5','4','Noturno')
 -- DISCIPLINA 5 NÃO TEM ALUNOS
 
 -- INNER JOIN
+
+SELECT a.Nome,c.Nome_Discip,b.Período
+FROM Alunos a
+INNER JOIN Matricula b
+ON a.Id_Aluno = b.Id_Aluno
+INNER JOIN Disciplina c
+ON b.Id_disciplina = c.Id_Diciplina
