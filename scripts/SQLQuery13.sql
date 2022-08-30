@@ -83,6 +83,7 @@ INSERT INTO Matricula VALUES ('5','4','Noturno')
 
 -- INNER JOIN
 
+USE Curso
 SELECT a.Nome,c.Nome_Discip,b.Período
 FROM Alunos a
 INNER JOIN Matricula b
