@@ -90,3 +90,13 @@ INNER JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
 INNER JOIN Disciplina c
 ON b.Id_disciplina = c.Id_Diciplina
+
+-- LEFT JOIN
+
+SELECT a.Nome,c.Nome_Discip,b.Período
+FROM Alunos a
+LEFT JOIN Matricula b
+ON a.Id_Aluno = b.Id_Aluno
+LEFT JOIN Disciplina c
+ON b.Id_disciplina = c.Id_Diciplina
+-- WHERE c.Nome_Discip IS NULL: Para isolar somente o aluno que está sem disciplina e periodo.
