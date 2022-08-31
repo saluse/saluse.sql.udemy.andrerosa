@@ -44,5 +44,9 @@ INSERT INTO Vendas VALUES(10,'Excel','Rogério','SE',100)
 SELECT * FROM Vendas
 SELECT Aluno, Curso, Valor FROM Vendas
 
+SELECT * FROM Vendas
+ORDER BY Aluno -- ORDER BY ordena a consulta pela coluna que vem descrita após. EX: Order By ALUNO.
+
+
 
 		
