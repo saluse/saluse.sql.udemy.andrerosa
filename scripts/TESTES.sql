@@ -54,11 +54,11 @@ UPDATE Vendas -- UPDATE: Serve para atualizar as colunas setadas.
 SET Valor = 130
 WHERE Curso = 'Excel'
 
-BEGIN
 UPDATE Vendas
 SET Curso = 'Power BI'
+WHERE Curso = 'BI'
 
-ROLLBACK TRANSACTION
+DELETE FROM Vendas
 
 
 
