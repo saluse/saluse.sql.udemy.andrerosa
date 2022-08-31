@@ -47,6 +47,9 @@ SELECT Aluno, Curso, Valor FROM Vendas
 SELECT * FROM Vendas
 ORDER BY Aluno -- ORDER BY ordena a consulta pela coluna que vem descrita após. EX: Order By ALUNO.
 
+SELECT * FROM Vendas
+WHERE Estado = 'RJ'
+
 
 
 		
