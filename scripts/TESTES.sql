@@ -50,6 +50,11 @@ ORDER BY Aluno -- ORDER BY ordena a consulta pela coluna que vem descrita após. 
 SELECT * FROM Vendas
 WHERE Estado = 'RJ'
 
+UPDATE Vendas -- UPDATE: Serve para atualizar as colunas setadas.
+SET Valor = 130
+WHERE Curso = 'Excel'
+
+
 
 
 		
