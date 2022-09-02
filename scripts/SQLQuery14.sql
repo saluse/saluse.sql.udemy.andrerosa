@@ -39,4 +39,7 @@ ON A.cod_uf=B.id
 GROUP BY b.regiao
 ORDER BY 2
 
+-- MAX: RETORNA O VALOR MAXIMO NA EXPRESSÃO
+SELECT MAX(Populacao) FROM cidades
+
 
