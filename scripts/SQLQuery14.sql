@@ -71,5 +71,8 @@ ON a.cod_uf=b.id
 GROUP BY b.regiao
 ORDER BY 2
 
+-- COUNT RETORNA O NÚMERO DE ITENS DE UM GRUPO
+SELECT COUNT(*) FROM cidades
+
 
 
