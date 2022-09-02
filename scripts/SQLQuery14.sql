@@ -59,4 +59,9 @@ ORDER BY 2
 
 SELECT SUM(Populacao) FROM cidades
 
+-- SUM POR ESTADO
+SELECT UF, SUM(Populacao) FROM cidades
+GROUP BY UF
+ORDER BY 2
+
 
