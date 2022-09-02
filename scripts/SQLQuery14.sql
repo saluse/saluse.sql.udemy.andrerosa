@@ -98,3 +98,14 @@ SELECT		AVG(Populacao)Média_Pop,
 			SUM(Populacao)Total_Pop,
 			COUNT(*) Qtde_CIdades
 FROM Cidades
+
+-- AULA 048
+
+SELECT UF,	AVG(Populacao)Média_Pop,
+			MIN(Populacao)Minimo_Pop,
+			MAX(Populacao)Maximo_Pop,
+			SUM(Populacao)Total_Pop,
+			COUNT(*) Qtde_CIdades
+FROM Cidades
+GROUP BY UF
+ORDER BY 2
