@@ -14,3 +14,10 @@ SELECT AVG(Populacao) FROM Cidades
 SELECT UF, AVG(Populacao) FROM Cidades
 GROUP BY Uf
 ORDER BY 2
+
+-- AVG POR REGIÃO
+SELECT b.regiao, AVG(a.Populacao) FROM cidades A
+INNER JOIN regiao_uf B
+ON A.cod_uf=b.id
+GROUP BY B.regiao
+ORDER BY 2
