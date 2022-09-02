@@ -31,3 +31,12 @@ SELECT UF, MIN(Populacao)
 GROUP BY UF
 ORDER BY 2
 
+-- AULA 047
+-- MIN POR REGIÂO
+SELECT b.regiao, MIN(Populacao) FROM cidades A
+INNER JOIN regiao_uf B
+ON A.cod_uf=B.id
+GROUP BY b.regiao
+ORDER BY 2
+
+
