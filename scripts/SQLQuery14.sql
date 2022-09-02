@@ -91,4 +91,10 @@ ON a.cod_uf=b.id
 GROUP BY b.regiao
 ORDER BY 2
 
-
+-- USANDO VARIAS FUNÇÕES DE AGREGAÇÃO
+SELECT		AVG(Populacao)Média_Pop,
+			MIN(Populacao)Minimo_Pop,
+			MAX(Populacao)Maximo_Pop,
+			SUM(Populacao)Total_Pop,
+			COUNT(*) Qtde_CIdades
+FROM Cidades
