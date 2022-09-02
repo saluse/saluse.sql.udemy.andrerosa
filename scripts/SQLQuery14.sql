@@ -59,3 +59,4 @@ ORDER BY 2
 
 SELECT SUM(Populacao) FROM cidades
 
+
