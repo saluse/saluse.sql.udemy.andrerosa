@@ -64,4 +64,12 @@ SELECT UF, SUM(Populacao) FROM cidades
 GROUP BY UF
 ORDER BY 2
 
+-- SUM POR REGIÃO
+SELECT b.Regiao, SUM(a.Populacao) FROM Cidades a
+INNER JOIN regiao_uf b
+ON a.cod_uf=b.id
+GROUP BY b.regiao
+ORDER BY 2
+
+
 
