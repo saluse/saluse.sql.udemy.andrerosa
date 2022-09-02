@@ -100,6 +100,7 @@ SELECT		AVG(Populacao)Média_Pop,
 FROM Cidades
 
 -- AULA 048
+-- POR ESTADO
 
 SELECT UF,	AVG(Populacao)Média_Pop,
 			MIN(Populacao)Minimo_Pop,
@@ -109,3 +110,15 @@ SELECT UF,	AVG(Populacao)Média_Pop,
 FROM Cidades
 GROUP BY UF
 ORDER BY 2
+
+-- POR REGIÃO
+	SELECT b.regiao,	AVG(Populacao)Média_Pop,
+						MIN(Populacao)Minimo_Pop,
+						MAX(Populacao)Maximo_Pop,
+						SUM(Populacao)Total_Pop,
+						COUNT(*) Qtde_Cidades
+	FROM Cidades a
+	INNER JOIN regiao_UF b
+	ON a.cod_uf=b.id
+	GROUP BY b.regiao
+	ORDER BY 2
