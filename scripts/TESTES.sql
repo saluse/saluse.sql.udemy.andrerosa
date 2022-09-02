@@ -41,6 +41,7 @@ INSERT INTO Vendas VALUES(8,'BI','Caio','MG',120)
 INSERT INTO Vendas VALUES(9,'BI','Lara','AC',120)
 INSERT INTO Vendas VALUES(10,'Excel','Rogério','SE',100)
 INSERT INTO Vendas VALUES(11,'VBA','Carlos','SE',150)
+INSERT INTO Vendas VALUES(12,'Excel','Carla','SE',100)
 
 SELECT * FROM Vendas
 SELECT Aluno, Curso, Valor FROM Vendas
