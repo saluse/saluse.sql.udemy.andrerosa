@@ -85,6 +85,10 @@ GROUP BY UF
 ORDER BY 2
 
 -- COUNT POR REGIÃO
-
+SELECT b.Regiao, COUNT(*) FROM CIdades a
+INNER JOIN regiao_uf b
+ON a.cod_uf=b.id
+GROUP BY b.regiao
+ORDER BY 2
 
 
