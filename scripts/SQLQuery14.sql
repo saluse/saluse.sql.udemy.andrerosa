@@ -47,3 +47,10 @@ SELECT UF, MAX(Populacao) FROM Cidades
 GROUP BY UF
 ORDER BY 2
 
+-- MAX POR REGIÃO
+SELECT B.Regiao, MAX(a.Populacao)Maximo FROM cidades a
+INNER JOIN regiao_uf b
+ON a.cod_uf=B.id
+GROUP BY b.regiao
+ORDER BY 2
+
