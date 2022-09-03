@@ -151,3 +151,7 @@ SELECT	a.nome_mun,
 FROM Cidades a
 INNER JOIN Senso_2013 b
 ON a.cod_uf+a.cod_mun=b.cod_mun
+
+-- AULA 049
+-- POR ESTADO
+
