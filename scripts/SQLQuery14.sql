@@ -168,10 +168,12 @@ SELECT	a.uf,
 É UMA FUNÇÃO QUE CALCULA O NÍVEL DE AGRUPAMENTO. GROUPING_ID PODE SER USADA APENAS NA LISTA SELECT <select>,
 NA CLAUSULA HAVING OU ORDER BY, QUANDO GROUP BY FOR ESPECIFICADA.
 */
-SELECT b.regiao,a.uf,SUM(a.populacao) Populacao,
-GROUPING_ID(b.regiao,a.uf) AS grupo
+SELECT b.regiao,a.uf,
+		SUM(a.populacao) Populacao,
+		GROUPING_ID(b.regiao,a.uf) AS grupo
 FROM Cidades a
 INNER JOIN regiao_uf b
 ON a.cod_uf=b.id
 GROUP BY ROLLUP(b.regiao,a.uf)
+
 
