@@ -188,5 +188,5 @@ SELECT VARP(Populacao) FROM cidades
 SELECT UF, VARP(Populacao) FROM CIdades
 GROUP BY UF
 
-SELECT UF,VARP(Populacao) VAR,VARP(Populacao)VARP FROM cidades
+SELECT UF,VAR(Populacao) VAR,VARP(Populacao)VARP FROM cidades
 GROUP BY UF
