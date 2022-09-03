@@ -154,4 +154,13 @@ ON a.cod_uf+a.cod_mun=b.cod_mun
 
 -- AULA 049
 -- POR ESTADO
+SELECT	a.uf, 
+			SUM(a.populacao) AS senso_2007, 
+			SUM(b.populacao) AS senso_2013,
+			100/CAST(SUM(a.populacao) AS FLOAT)*CAST(SUM(b.populacao) AS FLOAT)-100
+		FROM cidades a
+		INNER JOIN senso_2013 b
+		ON a.cod_uf+a.cod_mun=b.cod_mun
+		GROUP BY a.uf
+
 
