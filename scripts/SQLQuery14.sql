@@ -138,3 +138,16 @@ SELECT UF, SUM(Populacao) populacao,
 GROUPING(UF) AS grupo
 FROM Cidades
 GROUP BY UF WITH ROLLUP
+
+-- COMPARANDO CRESCIMENTO DAS CIDADES
+SELECT TOP 1 * FROM CIDADES
+SELECT TOP 1 * FROM SENSO_2013
+
+-- USANDO EXEMPLO 
+SELECT	a.nome_mun,
+	    a.populacao AS senso_2007,
+		b.populacao AS senso_2013,
+100/CAST(a.populacao AS FLOAT)*CAST(b.populacao AS FLOAT)-100 pct_cresc
+FROM Cidades a
+INNER JOIN Senso_2013 b
+ON a.cod_uf+a.cod_mun=b.cod_mun
