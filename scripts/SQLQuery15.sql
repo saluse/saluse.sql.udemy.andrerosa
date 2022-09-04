@@ -13,3 +13,9 @@ SELECT RANK() OVER (ORDER BY Estado ASC) AS rank_uf,
 	Regiao, 
 	Estado
 FROM regiao_uf
+
+-- RANK EXEMPLO 3
+SELECT RANK() OVER (ORDER BY Regiao ASC) AS rank_uf,
+	Regiao,
+	Estado
+FROM regiao_uf
