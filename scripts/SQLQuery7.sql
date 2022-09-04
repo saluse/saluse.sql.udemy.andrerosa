@@ -2,7 +2,9 @@
 	SELECT * FROM Funcionários		
 -- SIMULANDO ERRO
 	INSERT INTO Funcionários (nome, SALARIO) VALUES ('Pedro','asaas')
+
 -- DML UPDATE
+
 	UPDATE Funcionários SET SALARIO = '700'
 	WHERE ID = '23'
 -- Ou Aumento de 50% do valor no salário atual.
