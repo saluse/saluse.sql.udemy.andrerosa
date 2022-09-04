@@ -19,6 +19,7 @@ USE AdventureWorks2014
 	WHERE a.jobtitle = 'Marketing Assistant'
 	AND a.vacationhours > 40;
 
+
 -- OPERADOR BETWEEN
 	SELECT	e.firstname,
 			e.lastname,
