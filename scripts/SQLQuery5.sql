@@ -16,6 +16,7 @@ SELECT 'A'
 	SELECT city
 	FROM Suppliers
 	ORDER BY City
+
 -- EXEMPLO USANDO UNION ALL
 
 	SELECT 'CLI' ,city
