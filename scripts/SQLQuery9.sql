@@ -3,6 +3,7 @@
 /* Mantém os usúarios de permissão de leitura / gravação em objetos.*/
 -- PARTE 01 CONCEDE - GRANT
 -- CRIA UM LOGIN E DÁ PERMISSÂO NO BANCO.
+
 EXEC master.dbo.sp_addlogin 'UsrTeste','SenhaTeste';
 EXEC sp_grantdbaccess 'UsrTeste','SenhaTeste';
 
