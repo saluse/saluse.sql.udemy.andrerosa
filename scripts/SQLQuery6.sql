@@ -23,6 +23,7 @@ CREATE TABLE Funcionários
 	SETOR Varchar(30)
 	)
 -- DML SELECT
+
 -- EXEMPLO SELECT
 	SELECT * FROM Funcionários
 -- EXEMPLO SELECT
