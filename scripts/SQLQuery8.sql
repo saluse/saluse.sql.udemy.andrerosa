@@ -12,6 +12,7 @@ USE Curso
 			)
 	SELECT * FROM FuncionáriosAju
 	SELECT * FROM audit_salario
+
 -- DDL CRIANDO TABELA COM CHAVE ESTRANGEIRA.
 
 CREATE TABLE Salario
