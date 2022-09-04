@@ -46,6 +46,7 @@ ORDER BY p.LastName;
 			WHERE ProductNumber LIKE 'BK-%'
 			AND Color = 'Silver'	
 			AND NOT StandardCost < 400;
+
 			
 -- OPERADOR OR
 		SELECT firstname,
