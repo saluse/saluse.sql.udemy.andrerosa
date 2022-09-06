@@ -63,3 +63,5 @@ SELECT	ROW_NUMBER() OVER (ORDER BY Regiao ASC) AS ROW_NUMBER_UF,
 		Estado
 FROM regiao_uf
 ORDER BY 5,6
+
+
