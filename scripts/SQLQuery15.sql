@@ -73,4 +73,15 @@ CREATE TABLE Campeonato
 
 	)
 
+-- POPULANDO TABELA
+
+insert into campeonato values ('Corinthians','53');
+insert into campeonato values ('Grêmio','43');
+insert into campeonato values ('Santos','41');
+insert into campeonato values ('Palmeiras','40');
+insert into campeonato values ('Flamengo','38');
+insert into campeonato values ('Cruzeiro','37');
+insert into campeonato values ('Botafogo','37');
+insert into campeonato values ('Atlético-PR','34');
+
 
