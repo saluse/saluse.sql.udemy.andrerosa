@@ -83,5 +83,17 @@ insert into campeonato values ('Flamengo','38');
 insert into campeonato values ('Cruzeiro','37');
 insert into campeonato values ('Botafogo','37');
 insert into campeonato values ('Atlético-PR','34');
+insert into campeonato values ('Vasco','31');
+insert into campeonato values ('Atlético-MG','31');
+insert into campeonato values ('Fluminense','31');
+insert into campeonato values ('Sport','29');
+insert into campeonato values ('Avaí','29');
+insert into campeonato values ('Chapecoense','28');
+insert into campeonato values ('Ponte Preta','28');
+insert into campeonato values ('Bahia','27');
+insert into campeonato values ('São Paulo','27');
+insert into campeonato values ('Coritiba','27');
+insert into campeonato values ('Vitória','26');
+insert into campeonato values ('Atlético-GO','22');
 
-
+SELECT * FROM Campeonato
