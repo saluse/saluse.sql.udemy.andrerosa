@@ -97,3 +97,4 @@ insert into campeonato values ('Vitória','26');
 insert into campeonato values ('Atlético-GO','22');
 
 SELECT * FROM Campeonato
+
