@@ -98,3 +98,8 @@ insert into campeonato values ('Atlético-GO','22');
 
 SELECT * FROM Campeonato
 
+--Classificacao do campeonato
+	select rank() OVER (ORDER BY pontos desc) AS classif ,
+		    nometime,
+			pontos 
+	from campeonato
