@@ -38,3 +38,10 @@ DECLARE @a INT = 45,         
 DECLARE @a INT = 45,          
 		 @b INT = 40;   
 		 SELECT IIF (@a < @b, 'Menor', 'Maior') AS Resultado;
+
+--EXEMPLO 2
+
+--IIF COM CONSTANTES NULL
+--O RESULTADO DESSA INSTRUÇÃO É UM ERRO
+
+SELECT IIF (45 > 30, NULL, NULL) AS Result;
