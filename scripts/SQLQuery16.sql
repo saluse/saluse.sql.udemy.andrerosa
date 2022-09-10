@@ -45,3 +45,11 @@ DECLARE @a INT = 45,         
 --O RESULTADO DESSA INSTRUÇÃO É UM ERRO
 
 SELECT IIF (45 > 30, NULL, NULL) AS Result;
+
+--EXEMPLO 3
+--IIF COM PARÂMETROS NULL O RETORNO NULL
+
+	DECLARE @P INT = NULL,         
+			@S INT = NULL; 
+	SELECT  IIF (45 > 30, @p, @s) AS Result
+
