@@ -21,10 +21,12 @@ FROM   production.productcategory;
 		FROM   humanresources.employee 
 		WHERE  Year(hiredate) > 2005 
 		ORDER  BY Year(hiredate);
+
 --IIF
 --RETORNA 1 DE 2 VALORES, DEPENDENDO DA EXPRESSÃO BOOLEANA SER AVALIADA COMO TRUE OU FALSE NO SQL SERVER 
 
 --EXEMPLO 01
+
  DECLARE @a INT = 45,          
 		 @b INT = 40;   
 		 SELECT IIF (@a > @b, 'TRUE', 'FALSE') AS Resultado;
