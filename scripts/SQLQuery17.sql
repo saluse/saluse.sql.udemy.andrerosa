@@ -19,3 +19,9 @@ SELECT TOP 10
 	INNER JOIN [Order Details] c
   ON b.OrderID=c.OrderID
   GROUP BY a.CompanyName
+
+ -- ORDER BY 3 DESC
+ -- RECUPERANDO AS 10 CIDADES MAIS POPULOSAS DO BRASIL
+ USE curso
+ SELECT TOP 10 * FROM cidades
+ ORDER BY populacao Desc
