@@ -25,3 +25,8 @@ SELECT TOP 10
  USE curso
  SELECT TOP 10 * FROM cidades
  ORDER BY populacao Desc
+
+ USE Curso
+ SELECT TOP 10 *,RANK() OVER(ORDER BY Populacao Desc) AS Posicao
+ FROM Cidades
+ ORDER BY populacao Desc
