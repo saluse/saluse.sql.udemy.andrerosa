@@ -10,3 +10,9 @@ SELECT CONVERT(VARBINARY(20), @meuvalor); 
 SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 
 
+-- USE CAST  
+    USE AdventureWorks2014
+	SELECT SUBSTRING(NAME, 1, 30) AS ProductName,        
+	listprice 
+    FROM   production.product 
+	WHERE  CAST(listprice AS INT) LIKE '3%';
