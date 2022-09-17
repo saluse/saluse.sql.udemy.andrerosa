@@ -22,3 +22,10 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 	listprice 
 	FROM   production.product 
     WHERE  CONVERT(INT, listprice) LIKE '3%';
+
+--Formatando cast e arrendondando
+--Usando CAST com operadores aritméticos
+	SELECT Cast(Round(salesytd / commissionpct, 0) AS INT) AS formatado,        
+					 (salesytd / commissionpct )  nao_format 
+	FROM   sales.salesperson 
+	WHERE  commissionpct <> 0
