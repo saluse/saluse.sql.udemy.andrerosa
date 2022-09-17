@@ -29,3 +29,9 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 					 (salesytd / commissionpct )  nao_format 
 	FROM   sales.salesperson 
 	WHERE  commissionpct <> 0
+
+
+--USANDO CAST PARA CONCATENAR
+	SELECT  'A lista de preco é '+ Cast(listprice AS VARCHAR(12)) AS ListPrice 
+	FROM   production.product 
+	WHERE  listprice BETWEEN 350.00 AND 400.00;
