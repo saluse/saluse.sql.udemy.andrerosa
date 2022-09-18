@@ -18,20 +18,20 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 	WHERE  CAST(listprice AS INT) LIKE '3%';
 
 -- USE CONVERT.   
-	SELECT Substring(NAME, 1, 30) AS ProductName,        
+	SELECT SUBSTRING(NAME, 1, 30) AS ProductName,        
 	listprice 
 	FROM   production.product 
     WHERE  CONVERT(INT, listprice) LIKE '3%';
 
 --FORMATANDO CAST E ARREDONDANDO
 --USANDO CAST COM OPERADORES ARITIMÉTICOS
-	SELECT Cast(Round(salesytd / commissionpct, 0) AS INT) AS formatado,        
+	SELECT CAST(ROUND(salesytd / commissionpct, 0) AS INT) AS formatado,        
 					 (salesytd / commissionpct )  nao_format 
 	FROM   sales.salesperson 
 	WHERE  commissionpct <> 0
 
 
 --USANDO CAST PARA CONCATENAR
-	SELECT  'A lista de preco é '+ Cast(listprice AS VARCHAR(12)) AS ListPrice 
+	SELECT  'A lista de preco é '+ CAST(listprice AS VARCHAR(12)) AS ListPrice 
 	FROM   production.product 
 	WHERE  listprice BETWEEN 350.00 AND 400.00;
