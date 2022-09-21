@@ -37,3 +37,13 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 	FROM   production.product 
 	WHERE  listprice BETWEEN 350.00 AND 400.00;
 
+--USANDO CAST PARA CONCATENAR DISTINCT
+	SELECT DISTINCT  'A lista de preco é '+ Cast(listprice AS VARCHAR(12)) AS ListPrice 
+	FROM   production.product 
+	WHERE  listprice BETWEEN 350.00 AND 400.00;
+--USANDO CAST PARA CONCATENAR DISTINCT (!SIMULANDO ERRO)
+	SELECT DISTINCT  'A lista de preco é '+ listprice AS ListPrice 
+	FROM   production.product 
+	WHERE  listprice BETWEEN 350.00 AND 400.00;
+
+
