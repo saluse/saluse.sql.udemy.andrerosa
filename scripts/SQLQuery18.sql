@@ -47,10 +47,10 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 	FROM   production.product 
 	WHERE  listprice BETWEEN 350.00 AND 400.00;
 
---Usando CAST para produzir texto mais legível
+--USANDO CAST PARA PRODUZIR TEXTOS MAIS LEGÍVEIS
 	SELECT DISTINCT 
 	p.NAME,
-	Cast(p.NAME AS CHAR(10)) AS NAME,                 
+	CAST(p.NAME AS CHAR(10)) AS NAME,                 
 		s.unitprice 
 	FROM   sales.salesorderdetail AS s        
 		JOIN production.product AS p          
