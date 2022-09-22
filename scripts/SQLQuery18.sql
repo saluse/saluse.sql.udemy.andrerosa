@@ -57,17 +57,17 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 		ON s.productid = p.productid 
 	WHERE  p.NAME LIKE 'Long-Sleeve Logo Jersey, M';
 
---Usando CAST com a cláusula LIKE
+--USANDO CAST COM A CLÁUSULA LIKE
 
 	SELECT p.firstname,        
 		   p.lastname,        
 		   s.salesytd,        
 		   s.businessentityid,        
-		   Cast(Cast(s.salesytd AS INT) AS CHAR(20)),        
-		   Cast(s.salesytd AS CHAR(20)) 
+		   CAST(CAST(s.salesytd AS INT) AS CHAR(20)),        
+		   CAST(s.salesytd AS CHAR(20)) 
 	FROM   person.person AS p        
 		JOIN sales.salesperson AS s          
 		ON p.businessentityid = s.businessentityid 
-		WHERE  Cast(Cast(s.salesytd AS INT) AS CHAR(20)) LIKE '2%'
+		WHERE  CAST(CAST(s.salesytd AS INT) AS CHAR(20)) LIKE '2%'
 
 
