@@ -47,4 +47,27 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 	FROM   production.product 
 	WHERE  listprice BETWEEN 350.00 AND 400.00;
 
+--Usando CAST para produzir texto mais legível
+	SELECT DISTINCT 
+	p.NAME,
+	Cast(p.NAME AS CHAR(10)) AS NAME,                 
+		s.unitprice 
+	FROM   sales.salesorderdetail AS s        
+		JOIN production.product AS p          
+		ON s.productid = p.productid 
+	WHERE  p.NAME LIKE 'Long-Sleeve Logo Jersey, M';
+
+--Usando CAST com a cláusula LIKE
+
+	SELECT p.firstname,        
+		   p.lastname,        
+		   s.salesytd,        
+		   s.businessentityid,        
+		   Cast(Cast(s.salesytd AS INT) AS CHAR(20)),        
+		   Cast(s.salesytd AS CHAR(20)) 
+	FROM   person.person AS p        
+		JOIN sales.salesperson AS s          
+		ON p.businessentityid = s.businessentityid 
+		WHERE  Cast(Cast(s.salesytd AS INT) AS CHAR(20)) LIKE '2%'
+
 
