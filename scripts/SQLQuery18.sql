@@ -17,6 +17,7 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
     FROM   production.product 
 	WHERE  CAST(listprice AS INT) LIKE '3%';
 
+
 -- USE CONVERT.   
 	SELECT SUBSTRING(NAME, 1, 30) AS ProductName,        
 	listprice 
