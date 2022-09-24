@@ -8,6 +8,7 @@ SELECT TOP 10 a.CustomerID,a.CompanyName 
 FROM customers a
 
 --10 CLIENTES COM O MAIOR VOLUME DE PEDIDO (COMPRAS)
+
 USE NORTHWND
 SELECT TOP 10
 	RANK() OVER(ORDER BY SUM(c.Quantity*c.UnitPrice) DESC)Posicao,
