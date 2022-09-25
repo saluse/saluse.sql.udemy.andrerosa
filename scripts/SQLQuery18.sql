@@ -2,6 +2,7 @@
 
 DECLARE @meuvalor DECIMAL (5, 2); 
 SET @meuvalor = 193.57; 
+
 -- OR, USING CAST  
 SELECT Cast(@meuvalor AS VARBINARY(20)); 
 SELECT Cast(Cast(@meuvalor AS VARBINARY(20)) AS DECIMAL(5, 2)); 
