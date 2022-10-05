@@ -61,6 +61,7 @@ SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
 		ON s.productid = p.productid 
 	WHERE  p.NAME LIKE 'Long-Sleeve Logo Jersey, M';
 
+
 --USANDO CAST COM A CLÁUSULA LIKE
 
 	SELECT p.firstname,        
