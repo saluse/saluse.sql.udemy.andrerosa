@@ -56,3 +56,13 @@ SELECT  CONCAT(CURRENT_USER, 
                day(getdate()),'/',
 			   month(getdate()),'/',
 			   year(getdate())) AS Resultado
+
+--SIMULANDO UM ERRO COM:
+SELECT CURRENT_USER+ 
+               ' Seu Saldo é R$'+ 
+			   11.00+
+			   ' em '+
+               day(getdate())+'/'+
+			   month(getdate())+'/'+
+			   year(getdate())AS Resultado	
+
