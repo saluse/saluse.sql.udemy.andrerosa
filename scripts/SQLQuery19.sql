@@ -44,10 +44,10 @@ SELECT STR(123.45, 2, 2);
 SELECT CURRENT_USER
 
 -- EXEMPLO FUNÇÕES DE DATA.
-SELECT GETDATE() -- Retorna a Data Geral
-SELECT DAY(getdate()) -- 
-SELECT MONTH(getdate())
-SELECT YEAR(getdate())
+SELECT GETDATE() -- Retorna a Data atual completa
+SELECT DAY(getdate()) -- Retorna o dia atual
+SELECT MONTH(getdate()) -- Retorna o mês atual
+SELECT YEAR(getdate()) -- Retorna o ano atual
 
 SELECT  CONCAT(CURRENT_USER, 
                ' Seu Saldo é R$', 
