@@ -20,3 +20,11 @@ DECLARE @Position INT,
 				CHAR(ASCII(SUBSTRING(@String, @Position, 1)))
 				SET @Position = @Position + 1
 			END;
+-- SELECT ASCII(SUBSTRING('OLÁ, MNUNDO', 1, 1))
+-- LTRIM
+-- RETORNA UMA EXPRESSÃO DE CARACTERE DEPOIS DE RESOLVER ESPAÇOS EM BRANCO A ESQUERDA
+
+DECLARE @string_to_trim VARCHAR(60); 
+	SET @string_to_trim ='     Cinco espaços no inicio.'; 
+	SELECT  'Texto sem espaço:'+Ltrim(@string_to_trim); 
+	SELECT  'Texto Com espaço:'+@string_to_trim;
