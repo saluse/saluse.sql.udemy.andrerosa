@@ -26,16 +26,25 @@ DECLARE @Position INT,
 
 DECLARE @string_to_trim VARCHAR(60); 
 	SET @string_to_trim ='     Cinco espaços no inicio.'; 
-	SELECT  'Texto sem espaço:'+Ltrim(@string_to_trim); 
+	SELECT  'Texto sem espaço:'+LTRIM(@string_to_trim); 
 	SELECT  'Texto Com espaço:'+@string_to_trim;
 
 -- STR
 -- EXEMPLO RETRONA DADOS DE CARACTERES CONVERTIDOS DE DADOS NUMÉRICOS
-SELECT  Str(123.45, 6, 1);
+SELECT  STR(123.45, 6, 1);
 
 -- PROVA DE CONVERSÃO DE CARACTERE PARA NUMERIC
-SELECT 'Teste '+Str(123.45, 6, 1);
+SELECT 'Teste '+STR(123.45, 6, 1);
 
 -- QUANDO A EXPRESSÃO EXCEDE O COMPRIMENTO ESPECIFICADO, A CADEIA DE CARACTERES RETORNA ** PARA O COMPRIMENTO ESPECIFICADO.
-SELECT Str(123.45, 2, 2);
+SELECT STR(123.45, 2, 2);
 
+-- CONCAT
+-- RETORNA UMA CADEIA DE CARACTERES QUE É O RESULTADO DA CONCATENAÇÃO DE DOIS OU MAIS VALORES.
+SELECT  CONCAT(CURRENT_USER, 
+               ' Seu Saldo é R$', 
+			   11.00, 
+			   ' em ',
+               day(getdate()),'/',
+			   month(getdate()),'/',
+			   year(getdate())) AS Resultado
