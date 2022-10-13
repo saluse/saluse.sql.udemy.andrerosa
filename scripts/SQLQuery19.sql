@@ -28,3 +28,9 @@ DECLARE @string_to_trim VARCHAR(60); 
 	SET @string_to_trim ='     Cinco espaços no inicio.'; 
 	SELECT  'Texto sem espaço:'+Ltrim(@string_to_trim); 
 	SELECT  'Texto Com espaço:'+@string_to_trim;
+
+-- STR
+-- EXEMPLO RETRONA DADOS DE CARACTERES CONVERTIDOS DE DADOS NUMÉRICOS
+SELECT  Str(123.45, 6, 1);
+-- PROVA DE CONVERSÃO DE CARACTERE PARA NUMERIC
+SELECT 'Teste '+Str(123.45, 6, 1);
