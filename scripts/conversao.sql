@@ -1,69 +1,68 @@
 
-DECLARE @meuvalor DECIMAL (5, 2); 
-SET @meuvalor = 193.57; 
--- Or, using CAST  
-SELECT Cast(@meuvalor AS VARBINARY(20)); 
-SELECT Cast(Cast(@meuvalor AS VARBINARY(20)) AS DECIMAL(5, 2)); 
--- Or, using CONVERT  
-SELECT CONVERT(VARBINARY(20), @meuvalor); 
-SELECT CONVERT(DECIMAL(5, 2), CONVERT(VARBINARY(20), @meuvalor));
+DECLAREÂ @meuvalorÂ DECIMALÂ (5,Â 2);Â 
+SETÂ @meuvalorÂ =Â 193.57;Â 
+--Â Or,Â usingÂ CASTÂ Â 
+SELECTÂ Cast(@meuvalorÂ ASÂ VARBINARY(20));Â 
+SELECTÂ Cast(Cast(@meuvalorÂ ASÂ VARBINARY(20))Â ASÂ DECIMAL(5,Â 2));Â 
+--Â Or,Â usingÂ CONVERTÂ Â 
+SELECTÂ CONVERT(VARBINARY(20),Â @meuvalor);Â 
+SELECTÂ CONVERT(DECIMAL(5,Â 2),Â CONVERT(VARBINARY(20),Â @meuvalor));
 
 
-
--- Use CAST  
+--Â UseÂ CASTÂ Â 
     use AdventureWorks2014
-	SELECT Substring(NAME, 1, 30) AS ProductName,        
-	listprice 
-    FROM   production.product 
-	WHERE  Cast(listprice AS INT) LIKE '3%';
+	SELECTÂ Substring(NAME,Â 1,Â 30)Â ASÂ ProductName,Â Â Â Â Â Â Â Â 
+	listpriceÂ 
+    FROMÂ Â Â production.productÂ 
+	WHEREÂ Â Cast(listpriceÂ ASÂ INT)Â LIKEÂ '3%';
 
--- Use CONVERT.   
-	SELECT Substring(NAME, 1, 30) AS ProductName,        
-	listprice 
-	FROM   production.product 
-    WHERE  CONVERT(INT, listprice) LIKE '3%';
+--Â UseÂ CONVERT.Â Â Â 
+	SELECTÂ Substring(NAME,Â 1,Â 30)Â ASÂ ProductName,Â Â Â Â Â Â Â Â 
+	listpriceÂ 
+	FROMÂ Â Â production.productÂ 
+    WHEREÂ Â CONVERT(INT,Â listprice)Â LIKEÂ '3%';
 
 --Formatando cast e arrendondando
---Usando CAST com operadores aritméticos
-	SELECT Cast(Round(salesytd / commissionpct, 0) AS INT) AS formatado,        
-					 (salesytd / commissionpct )  nao_format 
-	FROM   sales.salesperson 
-	WHERE  commissionpct <> 0
+--Usando CAST com operadores aritmÃ©ticos
+	SELECTÂ Cast(Round(salesytdÂ /Â commissionpct,Â 0)Â ASÂ INT)Â ASÂ formatado,Â Â Â Â Â Â Â Â 
+					 (salesytdÂ /Â commissionpctÂ )Â Â nao_formatÂ 
+	FROMÂ Â Â sales.salespersonÂ 
+	WHEREÂ Â commissionpctÂ <>Â 0
 
 --Usando CAST para concatenar
-	SELECT  'A lista de preco é '+ Cast(listprice AS VARCHAR(12)) AS ListPrice 
-	FROM   production.product 
-	WHERE  listprice BETWEEN 350.00 AND 400.00;
+	SELECTÂ  'A lista de preco Ã©Â '+Â Cast(listpriceÂ ASÂ VARCHAR(12))Â ASÂ ListPriceÂ 
+	FROMÂ Â Â production.productÂ 
+	WHEREÂ Â listpriceÂ BETWEENÂ 350.00Â ANDÂ 400.00;
 
 --Usando CAST para concatenar Distinct
-	SELECT distinct  'A lista de preco é '+ Cast(listprice AS VARCHAR(12)) AS ListPrice 
-	FROM   production.product 
-	WHERE  listprice BETWEEN 350.00 AND 400.00;
+	SELECTÂ distinct  'A lista de preco Ã©Â '+Â Cast(listpriceÂ ASÂ VARCHAR(12))Â ASÂ ListPriceÂ 
+	FROMÂ Â Â production.productÂ 
+	WHEREÂ Â listpriceÂ BETWEENÂ 350.00Â ANDÂ 400.00;
 --Usando CAST para concatenar Distinct (!Simulando erro)
-	SELECT distinct  'A lista de preco é '+ listprice AS ListPrice 
-	FROM   production.product 
-	WHERE  listprice BETWEEN 350.00 AND 400.00;
+	SELECTÂ distinct  'A lista de preco Ã©Â '+Â listpriceÂ ASÂ ListPriceÂ 
+	FROMÂ Â Â production.productÂ 
+	WHEREÂ Â listpriceÂ BETWEENÂ 350.00Â ANDÂ 400.00;
 
 
---Usando CAST para produzir texto mais legível
-	SELECT DISTINCT 
+--Usando CAST para produzir texto mais legÃ­vel
+	SELECTÂ DISTINCTÂ 
 	p.NAME,
-	Cast(p.NAME AS CHAR(10)) AS NAME,                 
-		s.unitprice 
-	FROM   sales.salesorderdetail AS s        
-		JOIN production.product AS p          
-		ON s.productid = p.productid 
-	WHERE  p.NAME LIKE 'Long-Sleeve Logo Jersey, M';
+	Cast(p.NAMEÂ ASÂ CHAR(10))Â ASÂ NAME,Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 
+		s.unitpriceÂ 
+	FROMÂ Â Â sales.salesorderdetailÂ ASÂ sÂ Â Â Â Â Â Â Â 
+		JOINÂ production.productÂ ASÂ pÂ Â Â Â Â Â Â Â Â Â 
+		ONÂ s.productidÂ =Â p.productidÂ 
+	WHEREÂ Â p.NAMEÂ LIKEÂ 'Long-Sleeve Logo Jersey, M';
 
---Usando CAST com a cláusula LIKE
+--Usando CAST com a clÃ¡usula LIKE
 
-	SELECT p.firstname,        
-		   p.lastname,        
-		   s.salesytd,        
-		   s.businessentityid,        
-		   Cast(Cast(s.salesytd AS INT) AS CHAR(20)),        
-		   Cast(s.salesytd AS CHAR(20)) 
-	FROM   person.person AS p        
-		JOIN sales.salesperson AS s          
-		ON p.businessentityid = s.businessentityid 
-		WHERE  Cast(Cast(s.salesytd AS INT) AS CHAR(20)) LIKE '2%'
+	SELECTÂ p.firstname,Â Â Â Â Â Â Â Â 
+		   p.lastname,Â Â Â Â Â Â Â Â 
+		   s.salesytd,Â Â Â Â Â Â Â Â 
+		   s.businessentityid,Â Â Â Â Â Â Â Â 
+		   Cast(Cast(s.salesytdÂ ASÂ INT)Â ASÂ CHAR(20)),Â Â Â Â Â Â Â Â 
+		   Cast(s.salesytdÂ ASÂ CHAR(20))Â 
+	FROMÂ Â Â person.personÂ ASÂ pÂ Â Â Â Â Â Â Â 
+		JOINÂ sales.salespersonÂ ASÂ sÂ Â Â Â Â Â Â Â Â Â 
+		ONÂ p.businessentityidÂ =Â s.businessentityidÂ 
+		WHEREÂ Â Cast(Cast(s.salesytdÂ ASÂ INT)Â ASÂ CHAR(20))Â LIKEÂ '2%'
