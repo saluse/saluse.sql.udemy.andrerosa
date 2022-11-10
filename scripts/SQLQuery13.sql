@@ -1,12 +1,12 @@
 -- AULA 044
--- DiferenÁas entre JOINs
+-- Diferen√ßas entre JOINs
 -- * (INNER JOIN) Retorna registros que tem valores correspondentes em amnbas as tabelas
 -- * LEFT (OUTER) JOIN: Retorna todos os registros da tabela a esquerda e os registros correspondentes da tabela da direita.
 -- * RIGHT (OUTER) JOIN: Retorna todos os registros	da tabela a direta e os registros correspondentes da tabela a esquerda.
--- * FULL (OUTER) JOIN: Retorna todos os registros qunado houver uma correspondÍncia na tabela a equerda ou a direita. 
+-- * FULL (OUTER) JOIN: Retorna todos os registros qunado houver uma correspond√™ncia na tabela a equerda ou a direita. 
 USE Curso
 -- DROP TABLE Aluno
--- CRIA«√O DA TABELA ALUNO
+-- CRIA√á√ÉO DA TABELA ALUNO
 CREATE TABLE Alunos
 (Id_Aluno INT IDENTITY(1,1),
 Nome Varchar(20) NOT NULL
@@ -26,21 +26,22 @@ Nome_Discip Varchar(20)
 CREATE TABLE Matricula
 (Id_Aluno INT,
 Id_Disciplina INT,
-PerÌodo Varchar(10)
+Per√≠odo Varchar(10)
 )
 
--- ALTERANDO TABELA CAMPO Id_Aluno PARA N¬O PERMITIR NOT NULL
+
+-- ALTERANDO TABELA CAMPO Id_Aluno PARA N√ÇO PERMITIR NOT NULL
 ALTER TABLE Matricula ALTER COLUMN Id_Aluno INT NOT NULL
 
 -- ALTERANDO TABELA
 ALTER TABLE MAtricula ALTER COLUMN Id_Disciplina INT NOT NULL
--- CRIANDO CHAVE PRIM¡RIA COMPOSTA
+-- CRIANDO CHAVE PRIM√ÅRIA COMPOSTA
 ALTER TABLE Matricula ADD CONSTRAINT PK_1 PRIMARY KEY (Id_Aluno, Id_Disciplina)
 
--- ADICIONANDO CHAVE PRIM¡RIA NA TABELA DISCIPLINA
+-- ADICIONANDO CHAVE PRIM√ÅRIA NA TABELA DISCIPLINA
 ALTER TABLE Disciplina ADD CONSTRAINT PK_2 PRIMARY KEY (Id_Diciplina) 
 
--- ADICIONANDO CHAVE PRIM¡RIA NA TABELA ALUNOS
+-- ADICIONANDO CHAVE PRIM√ÅRIA NA TABELA ALUNOS
 ALTER TABLE Alunos ADD CONSTRAINT PL_1 PRIMARY KEY (Id_Aluno)
 
 -- ADICIONANDO CHAVE ESTRANGEIRA A TABELA MATRICULA CAMPO ID_Aluno
@@ -52,11 +53,11 @@ ALTER TABLE	Matricula
 ADD CONSTRAINT FK_Mat2 FOREIGN KEY (Id_Disciplina) REFERENCES Alunos (Id_Aluno)
 
 -- INSERINDO REGISTROS NA TABELA ALUNOS 
-INSERT INTO Alunos VALUES ('Jo„o'),('Pedro'),('Maria'),('Tiago'),('Henrique')
+INSERT INTO Alunos VALUES ('Jo√£o'),('Pedro'),('Maria'),('Tiago'),('Henrique')
 SELECT * FROM Alunos
 
 -- INSERINDO REGISTROS NA TABELA DISCIPLINA
-INSERT INTO Disciplina VALUES ('Fisica'),('Quimica'),('Matem·tica'),('Banco de Dados'),('ProgramaÁ„o')
+INSERT INTO Disciplina VALUES ('Fisica'),('Quimica'),('Matem√°tica'),('Banco de Dados'),('Programa√ß√£o')
 SELECT * FROM Disciplina
 -- INSERINDO MATRICULAS DE ALUNOS
 
@@ -78,13 +79,13 @@ INSERT INTO Matricula VALUES ('5','2','Vespertino')
 INSERT INTO Matricula VALUES ('5','4','Noturno')
 
 -- AULA 045
--- ALUNO CODIGO 4 N√O TEM MATRICULA
--- DISCIPLINA 5 N√O TEM ALUNOS
+-- ALUNO CODIGO 4 N√ÉO TEM MATRICULA
+-- DISCIPLINA 5 N√ÉO TEM ALUNOS
 
 -- INNER JOIN
 
 USE Curso
-SELECT a.Nome,c.Nome_Discip,b.PerÌodo
+SELECT a.Nome,c.Nome_Discip,b.Per√≠odo
 FROM Alunos a
 INNER JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
@@ -93,17 +94,17 @@ ON b.Id_disciplina = c.Id_Diciplina
 
 -- LEFT JOIN
 
-SELECT a.Nome,c.Nome_Discip,b.PerÌodo
+SELECT a.Nome,c.Nome_Discip,b.Per√≠odo
 FROM Alunos a
 LEFT JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
 LEFT JOIN Disciplina c
 ON b.Id_disciplina = c.Id_Diciplina
--- WHERE c.Nome_Discip IS NULL: Para isolar somente o aluno que est· sem disciplina e periodo.
+-- WHERE c.Nome_Discip IS NULL: Para isolar somente o aluno que est√° sem disciplina e periodo.
 
 -- RIGHT JOIN
 
-SELECT a.Nome,c.Nome_Discip,b.PerÌodo
+SELECT a.Nome,c.Nome_Discip,b.Per√≠odo
 FROM Alunos a
 RIGHT JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
@@ -112,7 +113,7 @@ ON b.Id_disciplina = c.Id_Diciplina
 
 -- FULL JOIN 
 
-SELECT a.Nome,c.Nome_Discip,b.PerÌodo
+SELECT a.Nome,c.Nome_Discip,b.Per√≠odo
 FROM Alunos a
 FULL JOIN Matricula b
 ON a.Id_Aluno = b.Id_Aluno
