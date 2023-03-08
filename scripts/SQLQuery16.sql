@@ -2,54 +2,54 @@
 --CHOOSE
 --RETORNA O ITEM AO INDICE ESPECIFICADO DE UMA LISTA DE VALORES NO SQL SERVER.
 --EXEMPLO 01
-SELECT Choose (3, 'Gerente', 'Diretor', 'Desenvolvedor', 'Tester') AS Escolhido 
+SELECTÂ ChooseÂ (3,Â 'Gerente',Â 'Diretor',Â 'Desenvolvedor',Â 'Tester')Â AS EscolhidoÂ 
 
 --EXEMPLO 02
 Use AdventureWorks2014
- SELECT productcategoryid,     
-Choose (productcategoryid, 'A', 'B', 'C', 'D', 'E') AS Expressao 
-FROM   production.productcategory;
+SELECTÂ productcategoryid,Â Â Â Â Â 
+ChooseÂ (productcategoryid,Â 'A',Â 'B',Â 'C',Â 'D',Â 'E')Â ASÂ ExpressaoÂ 
+FROMÂ Â Â production.productcategory;
 
 --EXEMPLO 03
 
- SELECT jobtitle,        
+Â SELECTÂ jobtitle,Â Â Â Â Â Â Â Â 
         hiredate,
-		Month(hiredate)mes,        
-		Choose(Month(hiredate), 'Winter', 'Winter', 'Spring', 'Spring', 
-		                        'Spring','Summer', 'Summer','Summer', 
-								'Autumn', 'Autumn', 'Autumn','Winter') AS Quarter_Hired 
-		FROM   humanresources.employee 
-		WHERE  Year(hiredate) > 2005 
-		ORDER  BY Year(hiredate);
+		Month(hiredate)mes,Â Â Â Â Â Â Â Â 
+		Choose(Month(hiredate),Â 'Winter',Â 'Winter',Â 'Spring',Â 'Spring',Â 
+		                        'Spring','Summer',Â 'Summer','Summer',Â 
+								'Autumn',Â 'Autumn',Â 'Autumn','Winter') AS Quarter_HiredÂ 
+		FROMÂ Â Â humanresources.employeeÂ 
+		WHEREÂ Â Year(hiredate)Â >Â 2005Â 
+		ORDERÂ Â BYÂ Year(hiredate);
 
 --IIF
---RETORNA 1 DE 2 VALORES, DEPENDENDO DA EXPRESSÃO BOOLEANA SER AVALIADA COMO TRUE OU FALSE NO SQL SERVER 
+--RETORNA 1 DE 2 VALORES, DEPENDENDO DA EXPRESSÃƒO BOOLEANA SER AVALIADA COMO TRUE OU FALSE NO SQL SERVER 
 
 --EXEMPLO 01
 
- DECLARE @a INT = 45,          
-		 @b INT = 40;   
-		 SELECT IIF (@a > @b, 'TRUE', 'FALSE') AS Resultado;
+Â DECLAREÂ @aÂ INTÂ =Â 45,Â Â Â Â Â Â Â Â Â  
+		 @bÂ INTÂ =Â 40;Â   
+		 SELECTÂ IIFÂ (@aÂ >Â @b,Â 'TRUE',Â 'FALSE')Â ASÂ Resultado;
 
-DECLARE @a INT = 45,          
-		 @b INT = 40;   
-		 SELECT IIF (@a > @b, 'Maior', 'Menor') AS Resultado;
+DECLAREÂ @aÂ INTÂ =Â 45,Â Â Â Â Â Â Â Â Â  
+		 @bÂ INTÂ =Â 40;Â   
+		 SELECTÂ IIFÂ (@aÂ >Â @b,Â 'Maior',Â 'Menor')Â ASÂ Resultado;
 
-DECLARE @a INT = 45,          
-		 @b INT = 40;   
-		 SELECT IIF (@a < @b, 'Menor', 'Maior') AS Resultado;
+DECLAREÂ @aÂ INTÂ =Â 45,Â Â Â Â Â Â Â Â Â  
+		 @bÂ INTÂ =Â 40;Â   
+		 SELECTÂ IIFÂ (@aÂ <Â @b,Â 'Menor',Â 'Maior')Â ASÂ Resultado;
 
 --EXEMPLO 2
 
 --IIF COM CONSTANTES NULL
---O RESULTADO DESSA INSTRUÇÃO É UM ERRO
+--O RESULTADO DESSA INSTRUÃ‡ÃƒO Ã‰ UM ERRO
 
-SELECT IIF (45 > 30, NULL, NULL) AS Result;
+SELECTÂ IIFÂ (45Â >Â 30,Â NULL,Â NULL)Â ASÂ Result;
 
 --EXEMPLO 3
---IIF COM PARÂMETROS NULL O RETORNO NULL
+--IIF COM PARÃ‚METROS NULL O RETORNO NULL
 
-	DECLARE @P INT = NULL,         
-			@S INT = NULL; 
-	SELECT  IIF (45 > 30, @p, @s) AS Result
+	DECLAREÂ @PÂ INTÂ =Â NULL,Â Â Â Â Â Â Â Â Â 
+			@SÂ INTÂ =Â NULL;Â 
+	SELECTÂ  IIF (45Â >Â 30,Â @p,Â @s)Â ASÂ Result
 
