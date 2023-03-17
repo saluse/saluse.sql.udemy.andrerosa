@@ -2,7 +2,7 @@
 USE NORTHWND
 --Simulando Erro UNION
 
-SELECT 1 -- se os tipos forem diferentes, o select apresentará erro.
+SELECT 1 -- se os tipos forem diferentes, o select apresentarï¿½ erro.
 UNION 
 SELECT 'A'
 
@@ -43,3 +43,4 @@ SELECT 'A'
 	ORDER BY city
 
 -- Exemplo com UNION ALL
+-- SELECT Tabela
