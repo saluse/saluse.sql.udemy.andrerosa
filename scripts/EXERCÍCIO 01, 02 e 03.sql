@@ -111,5 +111,3 @@ DEALLOCATE cursor1
 --verifindo insert 
 --select * from cli_nome
 
-
-
